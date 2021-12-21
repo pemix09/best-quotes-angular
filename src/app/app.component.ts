@@ -1,6 +1,7 @@
+import { FormComponent } from './form/form.component';
 import { QUOTES } from './models/data-base';
 import { Quotation } from './models/quotation';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = "Najlepsze cytaty";
   quotes: Quotation[] = QUOTES;
+
+  // @ViewChild('form')
+  // form: FormComponent;
 
  
 

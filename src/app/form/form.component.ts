@@ -11,7 +11,7 @@ export class FormComponent implements OnInit {
   @Output() 
   newQuote = new EventEmitter<Quotation>();
 
-  showForm = true;
+  showForm = false;
   quotation: Quotation = {author: '', quotation: '', votes: 0};
 
   onSwichForm(){
