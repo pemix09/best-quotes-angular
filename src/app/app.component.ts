@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = "Najlepsze cytaty";
   showForm = false;
   quotes: Quotation[] = QUOTES;
   quotation: Quotation = {author: '', quotation: '', votes: 0};
@@ -23,5 +24,12 @@ export class AppComponent {
 
   addVote(quote: Quotation, value: number){
     quote.votes += value;
+  }
+
+  bestQuotes(){
+    return this.quotes.filter( q => q.votes>0);
+  }
+  worstQuotes(){
+    return this.quotes.filter(q => q.votes<0);
   }
 }
