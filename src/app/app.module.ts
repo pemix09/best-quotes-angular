@@ -8,6 +8,7 @@ import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RankingComponent } from './ranking/ranking.component';
 import { FormComponent } from './form/form.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormComponent } from './form/form.component';
     MenuItemComponent,
     NavbarComponent,
     RankingComponent,
-    FormComponent
+    FormComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
