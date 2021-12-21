@@ -9,27 +9,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = "Najlepsze cytaty";
-  showForm = false;
   quotes: Quotation[] = QUOTES;
-  quotation: Quotation = {author: '', quotation: '', votes: 0};
 
-  onSwichForm(){
-    this.showForm = !this.showForm;
-  }
-
-  addQuotation(){
-    this.quotes.unshift(this.quotation);
-    this.quotation = {author: '', quotation: '', votes: 0};
-  }
+ 
 
   addVote(quote: Quotation, value: number){
     quote.votes += value;
   }
 
   bestQuotes(){
-    return this.quotes.filter( q => q.votes>0);
+    let bests = this.quotes.filter( q => q.votes>0);
+    return bests.sort((a: Quotation, b: Quotation) => b.votes - a.votes);
   }
   worstQuotes(){
-    return this.quotes.filter(q => q.votes<0);
+    let worsts = this.quotes.filter(q => q.votes<0);
+    return worsts.sort((a: Quotation, b: Quotation) => a.votes - b.votes);
+  }
+
+  onNewQuotation(newQuote: Quotation){
+    this.quotes.unshift(newQuote);
   }
 }
